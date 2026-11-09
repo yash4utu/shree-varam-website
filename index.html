@@ -210,6 +210,51 @@
       .schools { columns: 1; }
       .section { padding: 40px 0; }
     }
+    /* Bigger category cards and bold titles, excluding IT */
+#productGrid .card:not([href="#it"]) {
+  border-radius: 20px;
+}
+
+#productGrid .card:not([href="#it"]) .card-media,
+#productGrid .card:not([href="#it"]) .card-media img {
+  height: clamp(160px, 18vw, 200px);
+}
+
+#productGrid .card:not([href="#it"]) .card-content {
+  padding: 22px;
+}
+
+#productGrid .card:not([href="#it"]) .card-content h3 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 800;
+}
+
+/* Bold headings and separate rounded boxes inside non-IT categories */
+html:not(:has(a[href="#it"]:target)) #categoryGroups .item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+#categoryGroups .product-group:has(.item-list) h3 {
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+#categoryGroups .item-list li {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #c9d8e6;
+  border-radius: 16px;
+  background: #fff;
+  color: #102d49;
+  font-weight: 750;
+  box-shadow: 0 3px 10px rgba(16, 45, 73, .07);
+}
   </style>
 </head>
 <body>
